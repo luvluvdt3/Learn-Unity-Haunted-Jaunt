@@ -7,3 +7,8 @@ https://assetstore.unity.com/packages/essentials/tutorial-projects/unity-learn-3
 ## Useful trick:
 - With your cursor over the Scene view, press F to focus.
 -  In the Hierarchy, select the Root GameObject. Hold Alt (Windows) and click the arrow to the left of its name to expand all its child GameObjects.
+-  
+
+
+## Learning:
+- The first use for this system in your Project will be to make the character a Prefab.  This means that if you go on to make multiple levels for the game, you won’t need to remake JohnLemon for every level — you can just instantiate a new Prefab. Prefabs can be identified in the Hierarchy window by their blue name and icon.
