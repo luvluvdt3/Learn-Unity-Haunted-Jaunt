@@ -49,3 +49,10 @@ Select the transition from Idle to Walk by clicking on the connecting line.
   If Has Exit Time is true (the checkbox is enabled) then after a certain amount of time has passed the transition will automatically be taken and the state machine will play the next state.  In this game it’s important to control when the transition is taken, so disable the Has Exit Time checkbox.
   Further down the Inspector window, there will now be a warning saying "Transition needs at least one condition or an Exit Time to be valid, otherwise it will be ignored."  Because you just disabled the Has Exit Time checkbox, there is currently no reason to ever take this transition.  You need to provide one by adding a Condition.
   ![alt text](image-11.png)
+### 11. Add Conditions to your Transition
+- 1.  Click the + button beneath the (currently empty) Conditions list. 
+  ![alt text](image-12.png)
+- 2.  The transition from Idle to Walk is required when the character is walking — that is, when IsWalking is true. The default Condition created is actually just what you need here: if IsWalking is true, JohnLemon should transition from Idle to Walk. You don’t need to change anything!
+![alt text](image-13.png)
+- 3. Do da same with Walf->Idle but this time isWalking = false
+![alt text](image-14.png)
