@@ -62,3 +62,12 @@ You still need to tell the JohnLemon Prefab that this is the Animator Controller
 ![alt text](image-15.png)
 - 2.  Select the JohnLemon GameObject in the Hierarchy, then drag the Animator Controller to the Controller property of its Animator component in the Inspector. This is a very important step; without it, JohnLemon won’t be able to move.
 ![alt text](image-16.png)
+### 13.Make your Character React to Physics
+1.  Open the JohnLemon Prefab for editing in Prefab Mode. In the Inspector, you’ll find two components: a Transform and an Animator.  In order to react to physics your character needs two more components: a Rigidbody and a Collider.
+A Rigidbody component marks a GameObject as something that is part of the physics system that can move.  Since you definitely want your character to be able to move and we want them to bump into walls (therefore to be part of the physics system), the JohnLemon GameObject needs a Rigidbody component.
+2. Click the Add Component button. 
+![alt text](image-17.png)
+This is a 3D Project, so make sure that you click on Rigidbody and not Rigidbody 2D.
+3.  Now you have given the JohnLemon Prefab a Rigidbody component, it will react to physics effects such as gravity.  Let’s enter Play Mode and see that in action. Return to the MainScene by clicking on Scenes at the top of the Scene view, then press the Play button on the toolbar.
+Hmmm, that’s not quite right: the character falls a short distance then stops. Press the Play button again to exit Play Mode.
+This is being cased by the Animator.  The third property on the Animator component is Apply Root Motion, which is currently enabled. 
