@@ -37,3 +37,15 @@ https://assetstore.unity.com/packages/essentials/tutorial-projects/unity-learn-3
 - In order to use those animations in your Animator Controller, drag them from the Project window to the Animator window.
 ![alt text](image-6.png)
 - The default state is displayed in orange.  In this case, the default state is Idle because you dragged it in first. The default state can be changed by right clicking on a state and selecting Set As Layer Default State.
+### 10.Create Animator Transitions
+- 1.  Right click on the Idle state and select Make Transition. This starts a transition that follows the mouse cursor. 
+  ![alt text](image-7.png) ![alt text](image-8.png)
+- 2.  Your character needs to be able to change back to idle from walking, so repeat this process to create a transition from Walk to Idle.
+  ![alt text](image-9.png)
+- 3.  The state machine now has a way of transitioning between the two animations, but it doesn’t yet know when to transition.  Remember creating the IsWalking parameter?  This is what you will use to determine whether the state machine should change animation or stay on the same one.
+Select the transition from Idle to Walk by clicking on the connecting line.
+  ![alt text](image-10.png)
+-  In the Inspector, look at the settings for this transition. The first thing you need to change is the Has Exit Time checkbox.
+  If Has Exit Time is true (the checkbox is enabled) then after a certain amount of time has passed the transition will automatically be taken and the state machine will play the next state.  In this game it’s important to control when the transition is taken, so disable the Has Exit Time checkbox.
+  Further down the Inspector window, there will now be a warning saying "Transition needs at least one condition or an Exit Time to be valid, otherwise it will be ignored."  Because you just disabled the Has Exit Time checkbox, there is currently no reason to ever take this transition.  You need to provide one by adding a Condition.
+  ![alt text](image-11.png)
