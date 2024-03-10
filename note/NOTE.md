@@ -56,3 +56,9 @@ Select the transition from Idle to Walk by clicking on the connecting line.
 ![alt text](image-13.png)
 - 3. Do da same with Walf->Idle but this time isWalking = false
 ![alt text](image-14.png)
+### 12. Assign the Animator Controller to the JohnLemon Prefab
+You still need to tell the JohnLemon Prefab that this is the Animator Controller it should use:
+- 1.  In the Project window, to go Assets > Animation > Animators and find the JohnLemon Animator Controller. 
+![alt text](image-15.png)
+- 2.  Select the JohnLemon GameObject in the Hierarchy, then drag the Animator Controller to the Controller property of its Animator component in the Inspector. This is a very important step; without it, JohnLemon won’t be able to move.
+![alt text](image-16.png)
