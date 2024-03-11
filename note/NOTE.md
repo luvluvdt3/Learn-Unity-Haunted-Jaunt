@@ -71,3 +71,5 @@ This is a 3D Project, so make sure that you click on Rigidbody and not Rigidbody
 3.  Now you have given the JohnLemon Prefab a Rigidbody component, it will react to physics effects such as gravity.  Let’s enter Play Mode and see that in action. Return to the MainScene by clicking on Scenes at the top of the Scene view, then press the Play button on the toolbar.
 Hmmm, that’s not quite right: the character falls a short distance then stops. Press the Play button again to exit Play Mode.
 This is being cased by the Animator.  The third property on the Animator component is Apply Root Motion, which is currently enabled. 
+### 14.What is Root Motion?
+- Apply Root Motion is enabled on your Animator component, so any movement of the root in the animation will be applied every frame.  Since the Animator is playing Idle there is no movement, so the Animator will apply no movement.    So why does the JohnLemon GameObject move at all?  This is due to the Update Mode of the Animator.
