@@ -75,3 +75,16 @@ This is being cased by the Animator.  The third property on the Animator compone
 - Apply Root Motion is enabled on your Animator component, so any movement of the root in the animation will be applied every frame.  Since the Animator is playing Idle there is no movement, so the Animator will apply no movement.    So why does the JohnLemon GameObject move at all?  This is due to the Update Mode of the Animator.
 ### 15.What is the Update loop?
 - An Animator component can change when it performs its Update. By default it performs this in line with rendering.  This means that the Animator is moving the character in Update and the Rigidbody is simultaneously moving the character in Fixed Update.  This is what’s causing your problem, and it can easily be fixed!  
+### 16,17,18.Fix John Lemon's Movement
+1. In the Inspector window, click the Prefab Open button.
+![alt text](image-18.png)
+2. Go to the Animator component. In the Update Mode property drop-down, select Animate Physics. 
+![alt text](image-19.png)
+This change will cause the Animator to move the character in time with physics. Now there should be no competition between update loops to move the character, and it will react to physics as it should. 
+3.  You’ve already seen that the animations don’t have any vertical root motion, but this won’t stop JohnLemon from moving vertically after colliding with something. There are a couple of ways that this can be stopped. 
+The most obvious option is to disable Use Gravity on the Rigidbody component:
+![alt text](image-20.png)
+This would stop the character from falling, but it isn’t exactly what you need. If you disable Use Gravity then the character could still fall if a collision pushed it down — or float away if a collision pushed it upward. You definitely don’t want this to happen, so instead you need to constrain the movement of the character using physics.
+4. Find the RigidBody component and click the arrow to expand the Constraints property.
+![alt text](image-21.png)
+The Rigidbody component is now set up, and your character will react to the physics system.  However, it doesn’t really have any physical presence in the Scene yet — nothing can bump into it and it can’t bump into anything else. In order for it to have a physical presence in the scene, it needs a Collider.
