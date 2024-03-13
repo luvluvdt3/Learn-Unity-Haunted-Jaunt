@@ -73,3 +73,5 @@ Hmmm, that’s not quite right: the character falls a short distance then stops.
 This is being cased by the Animator.  The third property on the Animator component is Apply Root Motion, which is currently enabled. 
 ### 14.What is Root Motion?
 - Apply Root Motion is enabled on your Animator component, so any movement of the root in the animation will be applied every frame.  Since the Animator is playing Idle there is no movement, so the Animator will apply no movement.    So why does the JohnLemon GameObject move at all?  This is due to the Update Mode of the Animator.
+### 15.What is the Update loop?
+- An Animator component can change when it performs its Update. By default it performs this in line with rendering.  This means that the Animator is moving the character in Update and the Rigidbody is simultaneously moving the character in Fixed Update.  This is what’s causing your problem, and it can easily be fixed!  
