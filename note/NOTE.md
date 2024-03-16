@@ -12,6 +12,7 @@ https://assetstore.unity.com/packages/essentials/tutorial-projects/unity-learn-3
 
 ## Learning:
 - The first use for this system in your Project will be to make the character a Prefab.  This means that if you go on to make multiple levels for the game, you won’t need to remake JohnLemon for every level — you can just instantiate a new Prefab. Prefabs can be identified in the Hierarchy window by their blue name and icon.
+## Get started with John Lemon’s Haunted Jaunt
 ### 6. Turn the Character into a Prefab
   -  1.  Drag the GameObject from the Hierarchy into the Assets > Prefabs folder in the Project window.  A dialogue box will appear asking if you want to make an Original Prefab or a Prefab Variant — select Original Prefab. ![alt text](image.png)
   -  2.  Now the JohnLemon Prefab has been created, any changes you make to that Prefab will be reflected on the instance of the JohnLemon Prefab in the Scene.  
@@ -96,3 +97,8 @@ Change the Capsule Collider’s Height property to 1.4 and the Center property t
 These changes mean that the middle of the collider is half its height from the ground, and since JohnLemon is approximately 1.4 meters tall the shape covers him quite well. 
 3.  It’s still a little wide though — change the Capsule Collider’s Radius property to 0.4.
 ![alt text](image-23.png)
+## Write a script for character movement
+All the scripts you will be writing for this project take the form of MonoBehaviours.  MonoBehaviours are special types of scripts that can be attached to GameObjects just as components can.  This is because they are a specific case of component that you can write yourself.
+Scripts share some minor similarities with Prefabs:
+A script is created as an Asset, just like a Prefab is.
+Adding a script to a GameObject as a component is actually instantiating that script, just as adding a Prefab to a scene is instantiating that Prefab.  
