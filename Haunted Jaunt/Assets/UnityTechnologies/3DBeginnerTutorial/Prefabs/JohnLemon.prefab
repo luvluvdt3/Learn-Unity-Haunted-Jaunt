@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4827732658265500801}
   - component: {fileID: 4827732658272420713}
+  - component: {fileID: 6585405719004463749}
   m_Layer: 0
   m_Name: JohnLemon
   m_TagString: Untagged
@@ -54,6 +55,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!136 &6585405719004463749
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4827732658265010337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4
+  m_Height: 1.4
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.7, z: 0}
 --- !u!1 &4827732658265010339
 GameObject:
   m_ObjectHideFlags: 0

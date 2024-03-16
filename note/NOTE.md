@@ -88,3 +88,11 @@ This would stop the character from falling, but it isn’t exactly what you need
 4. Find the RigidBody component and click the arrow to expand the Constraints property.
 ![alt text](image-21.png)
 The Rigidbody component is now set up, and your character will react to the physics system.  However, it doesn’t really have any physical presence in the Scene yet — nothing can bump into it and it can’t bump into anything else. In order for it to have a physical presence in the scene, it needs a Collider.
+### 19.Add a Collider to John Lemon
+There are Collider components of many different shapes, but the simplest one that best fits JohnLemon is the Capsule Collider.
+1.  Click the Add Component button in the Inspector window, and search for Capsule Collider.  Select the Capsule Collider option, making sure not to click on Capsule Collider 2D.![alt text](image-22.png)
+2.  Currently the Capsule Collider doesn’t really cover the model, so collisions in the game won’t work properly — you need to resize and reposition the Capsule Collider so that it approximates JohnLemon’s shape. (In Prefab mode,  If you can't see the Collider, (or you only see it's transform), be sure to click on the "Gizmos" button at the top-right section of the "Scene" tab )
+Change the Capsule Collider’s Height property to 1.4 and the Center property to (0, 0.7, 0).
+These changes mean that the middle of the collider is half its height from the ground, and since JohnLemon is approximately 1.4 meters tall the shape covers him quite well. 
+3.  It’s still a little wide though — change the Capsule Collider’s Radius property to 0.4.
+![alt text](image-23.png)
