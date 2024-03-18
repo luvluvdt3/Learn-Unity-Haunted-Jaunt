@@ -108,3 +108,13 @@ Note: Scripts that are going to be used as a component need to have the same nam
 ![alt text](image-24.png)
 2.  Select your script, and look at the Inspector window. 
 3.  Now you have created your script Asset, open it for editing. You can either double click on the Asset, or click the "Open…" button in the Inspector window. Script editing is not done inside Unity — instead scripts open in another program called Visual Studio. Once that’s opened, you’ll be able to edit the script. 
+## 3.Create variables for the Horizontal and Vertical axes
+```c
+    void Update()
+    {
+        float horizontal = Input.GetAxis ("Horizontal");
+    }
+```
+What does this new line do?
+In short, your new line of code is telling the computer, “Create a new float variable and call it horizontal; set that variable equal to the result of this method call.”
+If classes are factories and methods are machines in those factories, variables are boxes containing stuff in those factories.  In other words, variables are a way of storing data.  The data you need to store is the value of the horizontal input axis.  In Unity, input axes return a number between -1 and 1 — this type of data is called float.  A float represents a number with decimal places.
