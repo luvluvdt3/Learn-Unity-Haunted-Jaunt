@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1719252082052226227, guid: e17e76ceceeaedc428c107f6cb3a6ab2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1719252082052226227, guid: e17e76ceceeaedc428c107f6cb3a6ab2, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4827732658265010337, guid: e17e76ceceeaedc428c107f6cb3a6ab2, type: 3}
       propertyPath: m_Name
       value: JohnLemon

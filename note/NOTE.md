@@ -118,3 +118,5 @@ Note: Scripts that are going to be used as a component need to have the same nam
 What does this new line do?
 In short, your new line of code is telling the computer, “Create a new float variable and call it horizontal; set that variable equal to the result of this method call.”
 If classes are factories and methods are machines in those factories, variables are boxes containing stuff in those factories.  In other words, variables are a way of storing data.  The data you need to store is the value of the horizontal input axis.  In Unity, input axes return a number between -1 and 1 — this type of data is called float.  A float represents a number with decimal places.
+## 4.How Did You Create That Variable?
+## 5.Make a Vector
