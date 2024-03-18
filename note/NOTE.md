@@ -102,3 +102,9 @@ All the scripts you will be writing for this project take the form of MonoBehavi
 Scripts share some minor similarities with Prefabs:
 A script is created as an Asset, just like a Prefab is.
 Adding a script to a GameObject as a component is actually instantiating that script, just as adding a Prefab to a scene is instantiating that Prefab.  
+## 2.Create your First Script (PlayerMovement)
+1.  Find the Assets > Scripts folder in the Project window.  Right-click on the folder and choose Create > C# Script.  Name the script "PlayerMovement".
+Note: Scripts that are going to be used as a component need to have the same name on the asset as the class name in the script itself.  When Unity creates a script file, it gives it a class name which matches what the Asset was first named. However, when the Asset is renamed, the class name does not change. 
+![alt text](image-24.png)
+2.  Select your script, and look at the Inspector window. 
+3.  Now you have created your script Asset, open it for editing. You can either double click on the Asset, or click the "Open…" button in the Inspector window. Script editing is not done inside Unity — instead scripts open in another program called Visual Studio. Once that’s opened, you’ll be able to edit the script. 
