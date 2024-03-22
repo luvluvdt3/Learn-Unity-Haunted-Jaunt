@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; //have to add this line to use SceneManager
 
 public class GameEnding : MonoBehaviour
 {
@@ -8,12 +9,15 @@ public class GameEnding : MonoBehaviour
     public float fadeDuration = 1f;
     public float displayImageDuration = 1f;
     public GameObject player;
-    public CanvasGroup exitBackgroundImageCanvasGroup;
+    public CanvasGroup exitBackgroundImageCanvasGroup; //if win 
+    public CanvasGroup caughtBackgroundImageCanvasGroup; //if got caught by Gargoyle
 
     bool m_IsPlayerAtExit;
+    bool m_IsPlayerCaught;
+
     float m_Timer;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other) //if player enters the exit
     {
         if (other.gameObject == player)
         {
@@ -21,23 +25,40 @@ public class GameEnding : MonoBehaviour
         }
     }
 
+    public void CaughtPlayer() // if he is caught by Gargoyle
+    {
+        m_IsPlayerCaught = true;
+    }
+
     void Update()
     {
         if (m_IsPlayerAtExit)
         {
-            EndLevel();
+            EndLevel(exitBackgroundImageCanvasGroup, false); //if win then exit the game
+        }
+        else if (m_IsPlayerCaught)
+        {
+            EndLevel(caughtBackgroundImageCanvasGroup, true); //if caught by Gargoyle then restart the game
         }
     }
 
-    void EndLevel()
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
     {
+
         m_Timer += Time.deltaTime;
 
-        exitBackgroundImageCanvasGroup.alpha = m_Timer / fadeDuration;
+        imageCanvasGroup.alpha = m_Timer / fadeDuration;
 
         if (m_Timer > fadeDuration + displayImageDuration)
         {
-            Application.Quit();
+            if (doRestart)
+            {
+                SceneManager.LoadScene(0); //load first scene aka our only scene
+            }
+            else
+            {
+                Application.Quit();
+            }
         }
     }
 }
