@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     //You’ve also used camelCase (rather than PascalCase, with its m_ prefix). This is because the variable is public, and the Unity naming convention uses this format for public member variables.  Naming conventions can be very useful, but there’s no technical reason for this.
     Animator m_Animator;
     Rigidbody m_Rigidbody;
+    AudioSource m_AudioSource;
     Vector3 m_Movement;
 
     Quaternion m_Rotation = Quaternion.identity;
@@ -24,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
+        m_AudioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,8 +46,17 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = hasHorizontalInput || hasVerticalInput;
         //if hasHorizontalInput or hasVerticalInput are true then isWalking is true, and otherwise it is false. (Input means the user player pressing controls)
         m_Animator.SetBool("IsWalking", isWalking);
-
-
+        if (isWalking)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            m_AudioSource.Stop();
+        }
         Vector3 desiredForward = Vector3.RotateTowards(transform.forward, m_Movement, turnSpeed * Time.deltaTime, 0f);
         //Quaternions are a way of storing rotations; they get around some of the problems with storing rotations as a 3D vector. 
         m_Rotation = Quaternion.LookRotation(desiredForward); //This line simply calls the LookRotation method and creates a rotation looking in the direction of the given parameter.  

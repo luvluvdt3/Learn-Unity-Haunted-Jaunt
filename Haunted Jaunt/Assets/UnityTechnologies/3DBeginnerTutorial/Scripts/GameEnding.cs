@@ -10,12 +10,16 @@ public class GameEnding : MonoBehaviour
     public float displayImageDuration = 1f;
     public GameObject player;
     public CanvasGroup exitBackgroundImageCanvasGroup; //if win 
+    public AudioSource exitAudio;
+  
+    public AudioSource caughtAudio;
     public CanvasGroup caughtBackgroundImageCanvasGroup; //if got caught by Gargoyle
 
     bool m_IsPlayerAtExit;
     bool m_IsPlayerCaught;
-
+    
     float m_Timer;
+    bool m_HasAudioPlayed;
 
     void OnTriggerEnter(Collider other) //if player enters the exit
     {
@@ -34,16 +38,21 @@ public class GameEnding : MonoBehaviour
     {
         if (m_IsPlayerAtExit)
         {
-            EndLevel(exitBackgroundImageCanvasGroup, false); //if win then exit the game
+            EndLevel(exitBackgroundImageCanvasGroup, false, exitAudio); //if win then exit the game
         }
         else if (m_IsPlayerCaught)
         {
-            EndLevel(caughtBackgroundImageCanvasGroup, true); //if caught by Gargoyle then restart the game
+            EndLevel(caughtBackgroundImageCanvasGroup, true, caughtAudio); //if caught by Gargoyle then restart the game
         }
     }
 
-    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart)
+    void EndLevel(CanvasGroup imageCanvasGroup, bool doRestart, AudioSource audioSource)
     {
+        if (!m_HasAudioPlayed)
+        {
+            audioSource.Play();
+            m_HasAudioPlayed = true;
+        }
 
         m_Timer += Time.deltaTime;
 
