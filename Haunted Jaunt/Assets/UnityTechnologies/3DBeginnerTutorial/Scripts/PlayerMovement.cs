@@ -1,16 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
-using static UnityEditor.PlayerSettings;
-using static UnityEngine.ParticleSystem;
-using UnityEngine.TextCore.Text;
-using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
-
     public float turnSpeed = 20f; // In Unity, public member variables appear in the Inspector window and can therefore be tweaked.
     //You’ve also used camelCase (rather than PascalCase, with its m_ prefix). This is because the variable is public, and the Unity naming convention uses this format for public member variables.  Naming conventions can be very useful, but there’s no technical reason for this.
     Animator m_Animator;
